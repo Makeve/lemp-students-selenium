@@ -4,8 +4,6 @@ Welcome to the **LEMP Selenium Automation Testing Course**! This course is speci
 
 **Schedule:** Twice a week (Tuesdays & Fridays) | **Duration:** 12 weeks | **Weekly Commitment:** 4 hours
 
-## Course Structure
-
 ## 📌 Course Overview  
 This training is designed to provide **hands-on experience** with Selenium WebDriver, from basic scripting to advanced frameworks.
 
