@@ -22,7 +22,6 @@ Before starting, ensure you have the following installed:
 ✅ **IDE (VS Code / IntelliJ / Eclipse / PyCharm)**  
 ✅ **Git (Only for your personal projects, NOT for cloning this repo)**  
 
----
 ## 📖 Training Modules & Topics
 
 Each module includes **theory, practical exercises, and test script examples**.
