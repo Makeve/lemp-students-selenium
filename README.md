@@ -6,8 +6,6 @@ Welcome to the **LEMP Selenium Automation Testing Course**! This course is speci
 
 ## Course Structure
 
----
-
 ## 📌 Course Overview  
 This training is designed to provide **hands-on experience** with Selenium WebDriver, from basic scripting to advanced frameworks.
 
@@ -15,7 +13,6 @@ This training is designed to provide **hands-on experience** with Selenium WebDr
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" alt="Selenium Logo" width="400" />
 
----
 ## 🛠 Prerequisites
 
 Before starting, ensure you have the following installed:
