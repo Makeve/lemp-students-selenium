@@ -39,7 +39,8 @@ This session will cover the following:
 
 ### Steps to Install IntelliJ
 1. **Download IntelliJ Community Edition**:
-   - Go to the [IntelliJ download page](https://www.jetbrains.com/idea/download/#section=mac).
+   - Go to IntelliJ for Mac [IntelliJ download page](https://www.jetbrains.com/idea/download/#section=mac)
+   - Go to IntelliJ for Windows [IntelliJ download page](https://www.jetbrains.com/idea/download/#section=windows)
    - Choose the "Community" edition and download it for your operating system.
 
 2. **Install IntelliJ**:
