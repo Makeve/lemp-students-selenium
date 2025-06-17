@@ -191,8 +191,9 @@ Oracle Java 8/9/10/11 is no longer supported with Selenium. You can install Java
 
 2. **Install Maven Manually**:
    - If not using Homebrew, you can download Maven from the following links:
-     - MacBook users: [Download Maven for Mac](https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz)
-     - Windows users: [Download Maven for Windows](https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip)
+     - MacBook users: [Download Maven for Mac](https://dlcdn.apache.org/maven/maven-3/3.9.10/binaries/apache-maven-3.9.10-bin.tar.gz)
+     - Windows users: [Download Maven for Windows](https://dlcdn.apache.org/maven/maven-3/3.9.10/binaries/apache-maven-3.9.10-bin.zip)
+     - This version might change and Apache release new versions everytime, just in case the above link doesn't work. Feel free to use the direct link here: [Maven Download](https://maven.apache.org/download.cgi?.=)
    - Extract the downloaded file and follow the installation instructions.
 
 3. **Verify Maven Installation**:
