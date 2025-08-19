@@ -28,9 +28,9 @@ Plugins can significantly enhance the functionality of your IDE, making developm
 4. Search for `CheckStyle-IDEA` and click `Install`.
 5. Restart IntelliJ IDEA if prompted.
 
-### 3. SonarLint
+### 3. SonarLint (SonarQube for IDE)
 
-**Description**: SonarLint is a static code analysis plugin that helps you detect and fix quality issues as you write code.
+**Description**: SonarQube is a static code analysis plugin that helps you detect and fix quality issues as you write code.
 
 **Installation**:
 1. Open IntelliJ IDEA.
