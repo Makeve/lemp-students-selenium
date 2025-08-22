@@ -56,12 +56,15 @@ The Maven project will have this structure:
    - Open the `pom.xml` file.
    - Add dependencies inside the `<dependencies>` tag:
      ```xml
-     <dependency>
-       <groupId>junit</groupId>
-       <artifactId>junit</artifactId>
-       <version>4.12</version>
-       <scope>test</scope>
-     </dependency>
+
+     <dependencies>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      <dependency>
+     </dependencies>
      ```
 
 8. **Build the Project**:
