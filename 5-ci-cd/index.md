@@ -6,6 +6,12 @@
 
 This module will guide you through the concepts and practices of Continuous Integration (CI) and Continuous Deployment (CD). It includes detailed instructions on setting up CI with GitHub Actions, deploying applications, and automated testing.
 
+By the end of this session, you’ll understand:  
+- The value of CI/CD in modern software development.  
+- How to set up automated workflows with GitHub Actions.  
+- Different strategies for deploying applications.  
+- How automated testing fits into a CI/CD pipeline.
+
 ### Contents
 - [Overview](introduction.md)
 - [Section 1 - Introduction to CI/CD](introduction-to-ci-cd.md)
@@ -13,20 +19,12 @@ This module will guide you through the concepts and practices of Continuous Inte
 - [Section 3 - Deploying Applications](deploying-applications.md)
 - [Section 4 - Automated Testing](automated-testing.md)
 
-### Introduction
-This section provides an overview of CI/CD, including its importance, benefits, and key concepts.
+### What You’ll Learn  
 
-### Introduction to CI/CD
-In this section, you will learn about the fundamentals of Continuous Integration and Continuous Deployment, including the benefits and best practices.
-
-### Setting Up CI with GitHub Actions
-This section covers the steps required to set up Continuous Integration using GitHub Actions, including creating workflows and automating builds.
-
-### Deploying Applications
-In this section, you will learn how to deploy applications using different deployment strategies and tools.
-
-### Automated Testing
-This section provides guidelines on implementing automated testing in your CI/CD pipeline to ensure code quality and reliability.
+- **Introduction to CI/CD**: Big picture overview, importance, and benefits.  
+- **Setting Up CI with GitHub Actions**: Create automated workflows and run builds/tests on every commit.  
+- **Deploying Applications**: Learn how applications are pushed to servers/cloud.  
+- **Automated Testing**: Add tests into your pipeline to keep code reliable. 
 
 ---
 
