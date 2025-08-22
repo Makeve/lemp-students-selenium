@@ -20,8 +20,39 @@ Maven is a build automation tool primarily used for Java projects. It simplifies
    - Go to `File` > `New` > `Project`.
    - Select `Maven` and click `Next`.
    - Enter the project details (e.g., GroupId, ArtifactId) and click `Finish`.
+  
+- Click **Next**.
 
-3. **Add Dependencies**:
+## **3. Configure Maven Coordinates**
+Fill in the fields:
+
+| Field        | Example Value        |
+|-------------|--------------------|
+| **GroupId** | `com.saucedemo`    |
+| **ArtifactId** | `SeleniumTesting` |
+| **Version**  | `1.0-SNAPSHOT`     |
+
+- Click **Next**.
+
+## **4. Set Project Name, Location, and JDK**
+- **Project Name**: `SeleniumTesting`  
+- **Project Location**: Choose a folder to save the project  
+- **Project SDK / JDK**: Select a valid JDK (e.g., Java 17)  
+- Click **Finish**.
+
+## **5. Verify Project Structure**
+The Maven project will have this structure:
+
+- `src/main/java` → Your application code  
+- `src/test/java` → Unit tests
+
+## **6. Create a Java Class**
+1. Right-click the package `com.saucedemo` in `src/main/java`.  
+2. Select **New → Java Class**.  
+3. Name it `App`.  
+
+
+7. **Add Dependencies**:
    - Open the `pom.xml` file.
    - Add dependencies inside the `<dependencies>` tag:
      ```xml
@@ -33,7 +64,7 @@ Maven is a build automation tool primarily used for Java projects. It simplifies
      </dependency>
      ```
 
-4. **Build the Project**:
+8. **Build the Project**:
    - Open the terminal within IntelliJ IDEA.
    - Navigate to the project directory:
      ```sh
