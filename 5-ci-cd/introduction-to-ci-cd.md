@@ -1,4 +1,4 @@
-# Introduction to CI/CD (Detailed)  
+# Introduction to CI/CD (Contd.)  
 
 Now that you know why CI/CD matters, let’s break it down into its main components:  
 
@@ -31,7 +31,6 @@ Continuous Delivery is the practice of ensuring that the codebase is always in a
 
 👉 Example: Think of baking bread — after mixing and baking, your bread is ready to eat, but you may decide when to actually serve it.  
 
-
 ## Continuous Deployment (CD)  
 Continuous Deployment is the practice of automatically deploying every code change that passes the automated tests to a production environment. This ensures that the software is always in a deployable state and can be released to users at any time.
 
@@ -39,7 +38,6 @@ Continuous Deployment is the practice of automatically deploying every code chan
 - No manual approval — truly hands-off.  
 
 👉 Example: Like a vending machine — once you insert money and make a selection, the item is **automatically delivered** without needing someone to hand it to you.  
-
 
 ## Benefits of CI/CD  
 
