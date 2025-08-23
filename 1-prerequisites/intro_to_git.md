@@ -29,7 +29,7 @@ By using Git, developers can collaborate more effectively, maintain a history of
 
 ---
 
-You should have already installed the Git CLI during the [Software Installation prerequisite section](course-reqs_section_01.md).
+You should have already installed the Git CLI during the [Software Installation prerequisite section](./installation_guide.md).
 
 Git is probably the most used tool as a developer, so it is essential you understand the core concepts, which will be used throughout the developer toolcamp course.
 
