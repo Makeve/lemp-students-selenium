@@ -103,8 +103,8 @@ Each module includes **assignments** to reinforce learning.
 ## Course Prerequisites
 
 Before diving into the Selenium Automation Testing course, ensure you have the following prerequisites covered:
-- [Installation Guide](prerequisites/installation-guide.md)
-- [Introduction to Git](prerequisites/intro-to-git.md)
+- [Installation Guide](1-prerequisites/installation_guide.md)
+- [Introduction to Git](1-prerequisites/intro_to_git.md)
 
 [Back to Top](#selenium-automation-testing-course-outline)
 
