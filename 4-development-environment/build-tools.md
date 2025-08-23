@@ -10,21 +10,26 @@ Build tools automate the process of compiling code, packaging binaries, running 
 
 Maven is a build automation tool primarily used for Java projects. It simplifies the build process by managing project dependencies, compiling code, running tests, and packaging the application.
 
-### Step-by-Step Guide
+## Step-by-Step Guide
 
-1. **Install Maven**:
+### **1. Install Maven**:
    - Follow the instructions in the [Installation Guide](../1-prerequisites/installation_guide.md) to install Maven.
 
-2. **Create a Maven Project**:
+### **2. Create a Maven Project**:
    - Open IntelliJ IDEA.
    - Go to `File` > `New` > `Project`.
    - Select `Maven` and click `Next`.
-   - Enter the project details (e.g., GroupId, ArtifactId) and click `Finish`.
+   - Ensure Maven Archetype is selected
   
-- Click **Next**.
+### **3. Set Project Name, Location, and JDK**
+- **Project Name**: `SeleniumTesting`  
+- **Project Location**: Choose a folder to save the project  
+- **Project SDK / JDK**: Select a valid JDK (e.g., Java 17)  
 
-## **3. Configure Maven Coordinates**
+### **4. Configure Maven Coordinates**
 Fill in the fields:
+   - Scroll down to Advanced Settings
+   - Enter the project details (e.g., GroupId, ArtifactId)
 
 | Field        | Example Value        |
 |-------------|--------------------|
@@ -32,31 +37,23 @@ Fill in the fields:
 | **ArtifactId** | `SeleniumTesting` |
 | **Version**  | `1.0-SNAPSHOT`     |
 
-- Click **Next**.
+   - and click `Create / Finish`.
 
-## **4. Set Project Name, Location, and JDK**
-- **Project Name**: `SeleniumTesting`  
-- **Project Location**: Choose a folder to save the project  
-- **Project SDK / JDK**: Select a valid JDK (e.g., Java 17)  
-- Click **Finish**.
-
-## **5. Verify Project Structure**
+### **5. Verify Project Structure**
 The Maven project will have this structure:
-
 - `src/main/java` → Your application code  
 - `src/test/java` → Unit tests
 
-## **6. Create a Java Class**
+### **6. Create a Java Class**
 1. Right-click the package `com.saucedemo` in `src/main/java`.  
 2. Select **New → Java Class**.  
 3. Name it `App`.  
 
-
-7. **Add Dependencies**:
+### **7. Add Dependencies**:
    - Open the `pom.xml` file.
    - Add dependencies inside the `<dependencies>` tag:
+   - Click on the mvn icon at the top right of your IntelliJ inside the `pom.xml` file to reload the mvn project.
      ```xml
-
      <dependencies>
       <dependency>
           <groupId>junit</groupId>
@@ -67,7 +64,7 @@ The Maven project will have this structure:
      </dependencies>
      ```
 
-8. **Build the Project**:
+### **8. Build the Project**:
    - Open the terminal within IntelliJ IDEA.
    - Navigate to the project directory:
      ```sh
@@ -151,7 +148,7 @@ Gradle is a flexible build automation tool that supports multiple programming la
 ### Step-by-Step Guide
 
 1. **Install Gradle**:
-   - Follow the instructions in the [Configuration Guide](../course-requirements/course-reqs_section_01.md) to install Gradle.
+   - Follow the instructions in the [Installation Guide](../1-prerequisites/installation_guide.md) to install Gradle.
 
 2. **Create a Gradle Project**:
    - Open IntelliJ IDEA.
@@ -252,7 +249,7 @@ Ant is a Java-based build tool that uses XML to describe the build process and i
 ### Step-by-Step Guide
 
 1. **Install Ant**:
-   - Follow the instructions in the [Configuration Guide](../course-requirements/course-reqs_section_01.md) to install Ant.
+   - Follow the instructions in the [Installation Guide](../1-prerequisites/installation_guide.md) to install Ant.
 
 2. **Create a Build File**:
    - Create a `build.xml` file in the project directory.
