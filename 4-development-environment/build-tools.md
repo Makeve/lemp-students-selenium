@@ -13,7 +13,7 @@ Maven is a build automation tool primarily used for Java projects. It simplifies
 ### Step-by-Step Guide
 
 1. **Install Maven**:
-   - Follow the instructions in the [Configuration Guide](../course-requirements/course-reqs_section_01.md) to install Maven.
+   - Follow the instructions in the [Installation Guide](../1-prerequisites/installation_guide.md) to install Maven.
 
 2. **Create a Maven Project**:
    - Open IntelliJ IDEA.
