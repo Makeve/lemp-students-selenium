@@ -16,7 +16,7 @@ By the end of this session, you’ll understand:
 - [Overview](introduction.md)
 - [Section 1 - Introduction to CI/CD](introduction-to-ci-cd.md)
 - [Section 2 - Setting Up CI with GitHub Actions](setting-up-ci-with-github-actions.md)
-- [Section 3 - Deploying Applications](deploying-applications.md)
+- [Section 3 - Deploying Applications](running-tests-in-CICD.md)
 - [Section 4 - Automated Testing](automated-testing.md)
 
 ### What You’ll Learn  
