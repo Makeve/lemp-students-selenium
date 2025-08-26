@@ -4,7 +4,7 @@
 
 GitHub Actions allows you to automatically build and run your Selenium tests whenever you push code or create a pull request. This ensures your tests always run in a clean environment without setting up anything locally.
 
-#### Tip: YAML is only needed here for GitHub Actions, not Selenium itself.
+> Tip: YAML is only needed here for GitHub Actions, not Selenium itself.
 
 ## Step-by-Step Guide
 
@@ -59,7 +59,7 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
 - Set up Java 17: Required for Maven + Selenium.
 - Install Chrome: Needed for running Selenium Chrome tests.
 - Run tests: Maven builds the project and executes your Selenium tests.
-#### Tip: Make sure your Selenium code uses WebDriverManager or a similar solution to automatically handle ChromeDriver. Otherwise, tests might fail in GitHub Actions.
+> Tip: Make sure your Selenium code uses WebDriverManager or a similar solution to automatically handle ChromeDriver. Otherwise, tests might fail in GitHub Actions.
 
 ### 3. Commit and Push Your Changes
 
