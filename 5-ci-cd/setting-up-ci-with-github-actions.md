@@ -36,8 +36,11 @@ GitHub Actions is a powerful CI/CD tool that allows you to automate, customize, 
          uses: actions/setup-java@v2
          with:
            java-version: '11'
+            distribution: 'temurin'   # <-- required!
+   
        - name: Build with Gradle
          run: ./gradlew build
+
    ```
 
 ### 3. Commit and Push Your Changes
