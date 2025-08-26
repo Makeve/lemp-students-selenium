@@ -4,13 +4,14 @@
 
 ## Continuous Integration and Continuous Deployment
 
-This module will guide you through the concepts and practices of Continuous Integration (CI) and Continuous Deployment (CD). It includes detailed instructions on setting up CI with GitHub Actions, deploying applications, and automated testing.
+This module will guide you through the concepts and practices of Continuous Integration (CI) and Continuous Deployment (CD). It focuses on automating builds and tests for your Selenium Maven projects using GitHub Actions.
 
-By the end of this session, you’ll understand:  
-- The value of CI/CD in modern software development.  
-- How to set up automated workflows with GitHub Actions.  
-- Different strategies for deploying applications.  
+By the end of this session, you’ll understand:
+
+- The value of CI/CD in modern software development.
+- How to set up automated workflows with GitHub Actions.
 - How automated testing fits into a CI/CD pipeline.
+- How to run Selenium tests automatically in CI.
 
 ### Contents
 - [Overview](introduction.md)
@@ -21,11 +22,10 @@ By the end of this session, you’ll understand:
 
 ### What You’ll Learn  
 
-- **Introduction to CI/CD**: Big picture overview, importance, and benefits.  
-- **Setting Up CI with GitHub Actions**: Create automated workflows and run builds/tests on every commit.  
-- **Deploying Applications**: Learn how applications are pushed to servers/cloud.  
-- **Automated Testing**: Add tests into your pipeline to keep code reliable. 
-
+- **Introduction to CI/CD:** Big picture overview, importance, and benefits.
+- **Setting Up CI with GitHub Actions:** Create automated workflows to build and test code on every commit.
+- **Running Tests in CI/CD:** Execute Selenium tests automatically and verify results.
+- **Automated Testing:** Understand why automated testing is critical and how it integrates into CI/CD pipelines.
 ---
 
 <div style="width: 100%">
