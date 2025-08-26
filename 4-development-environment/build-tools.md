@@ -60,7 +60,7 @@ The Maven project will have this structure:
           <artifactId>junit</artifactId>
           <version>4.12</version>
           <scope>test</scope>
-      <dependency>
+      </dependency>
      </dependencies>
      ```
 
