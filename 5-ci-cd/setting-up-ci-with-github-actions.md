@@ -96,5 +96,5 @@ You can customize your GitHub Actions workflow to fit your specific needs. For e
 
 <div style="width: 100%">
 <a href='introduction-to-ci-cd.md'><-- Previous Section: Introduction to CI/CD Contd.</a>
-<div align="right"><a href='deploying-applications.md'> Next Section: Deploying Applications --></a></div>
+<div align="right"><a href='running-tests-in-CICD.md'> Next Section: Deploying Applications --></a></div>
 </div>
