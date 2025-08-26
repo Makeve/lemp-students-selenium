@@ -26,7 +26,7 @@ Automated testing is a crucial part of the CI/CD pipeline. It ensures that your 
 1. **Open Your Workflow File**: Open your existing workflow file (e.g., `ci.yml`) in the `.github/workflows` directory.
 2. **Add Test Steps**: Add steps to run your tests. Here is an example for running JUnit tests in a Java project:
    ```yaml
-   name: CI
+    name: CI
 
    on:
      push:
@@ -38,16 +38,17 @@ Automated testing is a crucial part of the CI/CD pipeline. It ensures that your 
      build:
        runs-on: ubuntu-latest
 
-       steps:
-       - uses: actions/checkout@v2
-       - name: Set up JDK 11
-         uses: actions/setup-java@v2
-         with:
-           java-version: '11'
-       - name: Build with Gradle
-         run: ./gradlew build
-       - name: Run Tests
-         run: ./gradlew test
+        steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'   # Recommended distribution
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
    ```
 
 ### 3. Commit and Push Your Changes
