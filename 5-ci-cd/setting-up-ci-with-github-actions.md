@@ -31,10 +31,10 @@ GitHub Actions is a powerful CI/CD tool that allows you to automate, customize, 
        runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'   # Recommended distribution
