@@ -14,25 +14,24 @@ Think of CI/CD as a way to **put your development on autopilot** — every time 
 
 ## Tools and Technologies  
 
-- **GitHub Actions** → Automates workflows (CI/CD pipelines).  
-- **Deployment Tools** → Docker, Kubernetes, and cloud services (e.g., AWS, Azure, GCP).  
-- **Testing Frameworks** → JUnit, Selenium, Cypress, etc., for automated testing.  
+- **GitHub Actions:** Automates workflows and runs CI pipelines.
+- **Testing Frameworks:** Selenium (for browser automation), TestNG, JUnit.
+- **Optional Tools for the Future:** Mockito (for unit testing), Cypress (for frontend testing). 
 
 ## Steps Covered in This Module  
 
-1. **Introduction to CI/CD** → Why it matters, benefits, and best practices.  
-2. **Setting Up CI with GitHub Actions** → Automating builds and tests.  
-3. **Deploying Applications** → Strategies and tools for releasing code.  
-4. **Automated Testing** → Ensuring reliability and quality with test automation.  
+- **Introduction to CI/CD:** Understand the benefits and best practices.
+- **Setting Up CI with GitHub Actions:** Automate builds and test execution.
+- **Running Tests in CI/CD:** Run Selenium tests automatically and check results.
+- **Automated Testing:** Learn the role of automated testing in CI/CD pipelines. 
 
 ## Prerequisites  
 
-- **GitHub Account** → Make sure you have one set up.  
-- **Basic understanding of CI/CD** → We’ll expand on this in the next section.  
-- **Basic knowledge of deployment tools** → Docker, Kubernetes, or cloud basics.  
-- **Experience with testing frameworks** → Familiarity with automated testing tools.  
+- **GitHub Account:** Ensure you have one set up.
+- **Basic understanding of CI/CD:** Familiarity with the concept is helpful.
+- **Experience with testing frameworks:** Basic knowledge of Selenium, TestNG, or JUnit.
 
-✅ By the end of this module, you will have a **practical understanding of CI/CD** and know how to implement it in your own projects.  
+✅ By the end of this module, you will have a practical understanding of CI/CD for Selenium testing and be able to implement automated test pipelines using GitHub Actions.
 
 <div style="width: 100%">
 <a href='index.md'><-- Previous Section: Continuous Integration and Continuous Deployment</a>
