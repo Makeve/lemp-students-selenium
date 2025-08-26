@@ -30,16 +30,18 @@ GitHub Actions is a powerful CI/CD tool that allows you to automate, customize, 
      build:
        runs-on: ubuntu-latest
 
-       steps:
-       - uses: actions/checkout@v2
-       - name: Set up JDK 11
-         uses: actions/setup-java@v2
-         with:
-           java-version: '11'
-            distribution: 'temurin'   # <-- required!
-   
-       - name: Build with Gradle
-         run: ./gradlew build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'   # Recommended distribution
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
 
    ```
 
