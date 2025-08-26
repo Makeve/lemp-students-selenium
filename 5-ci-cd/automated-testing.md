@@ -80,6 +80,6 @@ Automated testing is a crucial part of the CI/CD pipeline. It ensures that your 
 ---
 
 <div style="width: 100%">
-<a href='deploying-applications.md'><-- Previous Section: Deploying Applications</a>
+<a href='running-tests-in-CICD.md'><-- Previous Section: Deploying Applications</a>
 <div align="right"><a href='../6-introduction-to-testing/index.md'> Proceed to Week 6 Session: Introduction to Testing --></a></div>
 </div>
