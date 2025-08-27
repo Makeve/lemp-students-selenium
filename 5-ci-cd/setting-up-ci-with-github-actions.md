@@ -60,6 +60,35 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
    git commit -m "Initial commit with CI workflow"
 
    ```
+### 4. Create an empty GitHub repository
+
+1. Go to GitHub → New Repository → leave it empty (no README or .gitignore).
+2. Copy the repository URL.
+
+### 5. Link local repo to GitHub and push
+
+1. In IntelliJ terminal:
+```yaml
+git remote add origin https://github.com/your-username/your-repo.git
+git branch -M main
+git push -u origin main
+
+```
+2. Your workflow file (`ci.yml`) is now on GitHub.
+
+### 6. Verify workflow execution
+
+1. Go to your GitHub repo → Actions tab → GitHub automatically detects the workflow.
+2. It will run the CI workflow (e.g., Selenium tests) whenever you push new commits.
+
+### 7. Repeat
+- Make changes locally → commit → push → GitHub Actions runs → verify results.
+
+ ### 8. Key points to remember:
+
+- YAML file can always be created before Git or GitHub.
+- GitHub Actions only triggers once the file is pushed to a GitHub repo.
+- Proper YAML indentation is critical — IntelliJ helps with that.
 
 ## Step-by-Step Guide - Using GitHub
 
