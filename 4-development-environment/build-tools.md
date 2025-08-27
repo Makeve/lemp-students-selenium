@@ -21,10 +21,19 @@ Maven is a build automation tool primarily used for Java projects. It simplifies
    - Select `Maven` and click `Next`.
    - Ensure Maven Archetype is selected
   
-### **3. Set Project Name, Location, and JDK**
+### **3. Steps in IntelliJ**
 - **Project Name**: `SeleniumTesting`  
 - **Project Location**: Choose a folder to save the project  
-- **Project SDK / JDK**: Select a valid JDK (e.g., Java 17)  
+- **Project SDK / JDK**: Select a valid JDK (e.g., Java 17)
+- In Archetype, choose:
+  `org.apache.maven.archetypes:maven-archetype-quickstart` maven-archetype-quickstart gives you the standard project structure like this:
+    ```xml
+   src/main/java
+   src/test/java
+   pom.xml
+    ```
+
+- Version → pick 1.4.
 
 ### **4. Configure Maven Coordinates**
 Fill in the fields:
@@ -37,34 +46,18 @@ Fill in the fields:
 | **ArtifactId** | `SeleniumTesting` |
 | **Version**  | `1.0-SNAPSHOT`     |
 
-   - and click `Create / Finish`.
+   - and click `Create / Finish` → IntelliJ will generate the correct structure with a single pom.xml.
 
 ### **5. Verify Project Structure**
 The Maven project will have this structure:
 - `src/main/java` → Your application code  
 - `src/test/java` → Unit tests
+- Verify a java class named App.java is added
+- Open the `pom.xml` file and Verify dependencies is added inside the `<dependencies>` tag:
+- Click on the mvn icon at the top right of your IntelliJ inside the `pom.xml` file to reload the mvn project if not reloaded.
+     
 
-### **6. Create a Java Class**
-1. Right-click the package `com.saucedemo` in `src/main/java`.  
-2. Select **New → Java Class**.  
-3. Name it `App`.  
-
-### **7. Add Dependencies**:
-   - Open the `pom.xml` file.
-   - Add dependencies inside the `<dependencies>` tag:
-   - Click on the mvn icon at the top right of your IntelliJ inside the `pom.xml` file to reload the mvn project.
-     ```xml
-     <dependencies>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
-          <scope>test</scope>
-      </dependency>
-     </dependencies>
-     ```
-
-### **8. Build the Project**:
+### **6. Build the Project**:
    - Open the terminal within IntelliJ IDEA.
    - Navigate to the project directory:
      ```sh
