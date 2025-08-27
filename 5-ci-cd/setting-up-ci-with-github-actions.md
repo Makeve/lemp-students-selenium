@@ -6,7 +6,62 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
 
 > Tip: YAML is only needed here for GitHub Actions, not Selenium itself.
 
-## Step-by-Step Guide
+## 1. Step-by-Step Guide - Using IntelliJ Locally
+1. In the Project view, right-click the project root → New → Directory → name it `.github.`
+2. Righ-click `.github` → New → Directory → name it `workflows.`
+   - Path: `your-project/.github/workflows/`
+3. Right-click `workflows` → New → File → name it `ci.yml.`
+4. Add your workflow content in `ci.yml.` Example:
+ ```yaml
+   name: Selenium CI
+
+   on:
+     push:
+       branches: [main]
+     pull_request:
+       branches: [main]
+
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - uses: actions/checkout@v4
+
+      # Step 2: Set up Java 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Step 3: Install Chrome
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      # Step 4: Build and run tests
+      - name: Build and run Selenium tests
+        run: mvn clean test
+
+   ```
+### 2. Initialize Git locally
+
+1. Go to VCS → Enable Version Control Integration → Git.
+2. Git is now initialized in your project.
+
+### 3. Commit your files locally
+
+1. Open the Git panel in IntelliJ or use terminal:
+   ```yaml
+   git add .
+   git commit -m "Initial commit with CI workflow"
+
+   ```
+
+## Step-by-Step Guide - Using GitHub
 
 ### 1. Create a `.github/workflows` Directory
 
@@ -45,7 +100,9 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
 
       # Step 3: Install Chrome
       - name: Install Google Chrome
-        run: sudo apt-get install -y google-chrome-stable
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       # Step 4: Build and run tests
       - name: Build and run Selenium tests
