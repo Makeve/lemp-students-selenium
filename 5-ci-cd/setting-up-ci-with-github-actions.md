@@ -163,6 +163,15 @@ git push -u origin main
    git push origin main
 
    ```
+3. **GitHub Browser Pop-up Screen**: A GitHub browser pop-up screen will display with a prompt to sign in to your GitHub account.
+   - Click on the `Sign in with your browser`  button
+   - Authorisation pop-up screen appears - click on the `Authorise git-ecosystem` to authorise.
+   - Add your password and confirm
+   - Close the tab and return to Terminal on IntelliJ
+   - Verify the results on Terminal.
+   - Go to your GitHub repo and reload
+   - Verify all files are pushed and updated correctly.
+
 ### 4. Verify the Workflow
 
 1. **Check the Actions Tab**: Go to the `Actions` tab in your GitHub repository.
