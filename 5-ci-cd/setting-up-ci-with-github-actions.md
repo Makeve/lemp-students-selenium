@@ -13,17 +13,18 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
 3. Right-click `workflows` → New → File → name it `ci.yml.`
 4. Add your workflow content in `ci.yml.` Example:
  ```yaml
-   name: Selenium CI
 
-   on:
-     push:
-       branches: [main]
-     pull_request:
-       branches: [main]
+name: Selenium CI
 
-   jobs:
-     build:
-       runs-on: ubuntu-latest
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Check out the repository
@@ -45,6 +46,7 @@ GitHub Actions allows you to automatically build and run your Selenium tests whe
       # Step 4: Build and run tests
       - name: Build and run Selenium tests
         run: mvn clean test
+
 
    ```
 ### 2. Initialize Git locally
