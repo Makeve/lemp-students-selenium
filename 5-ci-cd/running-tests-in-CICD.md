@@ -25,14 +25,14 @@ Add this code below after your `Run Selenium Tests` step in `ci.yml`:
    ```
 📌 This makes XML reports available in the Actions tab as downloadable artifacts.
 
-### 3. Add Surefire HTML Reports (Nicer to Read):
+### 3. Check Results in GitHub Actions:
 XML reports are hard to read. Let’s generate HTML reports that open in a browser.
 - Go to the Actions tab.
 - Open the latest workflow run to see test results.
 - Download artifacts if you want detailed reports.
 Now in the Actions tab, you’ll see a test-reports artifact you can download.
 
-### 4. Check Results in GitHub Actions:
+### 4. Add Surefire HTML Reports (Nicer to Read):
 Update your `pom.xml` with this plugin
 Add the Surefire Report plugin inside `<build><plugins>`:
 ```yaml
@@ -89,7 +89,7 @@ jobs:
       # (always uploads, even if tests fail)
       - name: Upload HTML Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: surefire-html                   # artifact name
           path: target/site/surefire-report.html # file to upload
