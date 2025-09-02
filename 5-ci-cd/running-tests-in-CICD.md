@@ -17,7 +17,7 @@ Add this code below after your `Run Selenium Tests` step in `ci.yml`:
    ```yaml
         - name: Upload Test Reports
         if: always()   # upload even if tests fail
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-reports
           path: target/surefire-reports/
