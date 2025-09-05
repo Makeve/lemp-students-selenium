@@ -25,6 +25,7 @@ The test will open a website, interact with a web element, and verify the page t
    import org.openqa.selenium.WebElement;
    import org.openqa.selenium.chrome.ChromeDriver;
    ```
+> IntelliJ will recognize these automatically if you added Selenium via Maven.
 
 ### 3. Create a WebDriver Instance
 Create a new instance of the Chrome driver:
@@ -35,18 +36,10 @@ Create a new instance of the Chrome driver:
 - No need for System.setProperty if using Selenium 4.6+ with Maven.
 - This line will launch a new Chrome browser window.
 
-### 4. Write the Test Script
-
-1. **Create WebDriver Instance**:
-   - Create a new instance of the Chrome driver.
-   ```java
-   WebDriver driver = new ChromeDriver();
-   ```
-
 2. **Navigate to a Website**:
    - Use the WebDriver to navigate to a website.
    ```java
-   driver.get("https://www.example.com");
+   driver.get("https://www.saucedemo.com/");
    ```
 
 3. **Interact with Web Elements**:
@@ -56,6 +49,9 @@ Create a new instance of the Chrome driver:
    searchBox.sendKeys("Selenium");
    searchBox.submit();
    ```
+   - `findElement(By.name("q"))` locates the search box.
+   - `sendKeys()` types text into it.
+   - `submit()` simulates pressing Enter.
 
 4. **Verify Page Title**:
    - Verify that the page title contains the expected text.
@@ -73,38 +69,41 @@ Create a new instance of the Chrome driver:
    ```java
    driver.quit();
    ```
+   - Closes all browser windows and ends the session.
 
 ### 5. Complete Test Script
 
 1. **Full Test Script**:
    - Combine all the steps into a complete test script.
    ```java
+   import org.openqa.selenium.By;
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.WebElement;
+   import org.openqa.selenium.chrome.ChromeDriver;
+
    public class FirstSeleniumTest {
        public static void main(String[] args) {
-           // Set the path to the WebDriver executable
-           System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-
-           // Create a new instance of the Chrome driver
+         // Create a new ChromeDriver instance (Selenium Manager handles driver)
            WebDriver driver = new ChromeDriver();
 
-           // Navigate to a website
-           driver.get("https://www.example.com");
+        // Navigate to a website
+        driver.get("https://www.saucedemo.com/");
 
-           // Find the search box and perform a search
-           WebElement searchBox = driver.findElement(By.name("q"));
-           searchBox.sendKeys("Selenium");
-           searchBox.submit();
+        // Find the search box and perform a search
+        WebElement searchBox = driver.findElement(By.name("q"));
+        searchBox.sendKeys("Selenium");
+        searchBox.submit();
 
-           // Verify the page title
-           String title = driver.getTitle();
-           if (title.contains("Selenium")) {
-               System.out.println("Test Passed");
-           } else {
-               System.out.println("Test Failed");
-           }
+        // Verify the page title
+        String title = driver.getTitle();
+        if (title.contains("Selenium")) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
 
-           // Close the browser
-           driver.quit();
+        // Close the browser
+        driver.quit();
        }
    }
    ```
@@ -113,6 +112,10 @@ Create a new instance of the Chrome driver:
 
 1. **Execute the Test**:
    - Run the `FirstSeleniumTest` class to execute the test and verify that it works as expected.
+      - In IntelliJ or Eclipse, right-click the class → Run `'FirstSeleniumTest'`.
+
+Observe Chrome launching, performing the search, printing the test result, and closing.
+> ✅ If it runs successfully, your Selenium setup and Maven project are correctly configured.
 
 ---
 
