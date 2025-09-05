@@ -1,7 +1,215 @@
-# First Selenium Script
+# First Selenium Script - Writing Your First Test
+
+### Introduction
+
+In this section, we’ll write our first Selenium test in Java 🎉.
+
+A Selenium test is simply a Java program that:
+
+1. Opens a browser (e.g., Chrome).
+2. Navigates to a website.
+3. Finds elements on the page.
+4. Interacts with those elements (typing, clicking, etc.).
+5. Checks (verifies) that the expected result happens.
+
+By the end, you’ll have a working test script that you can run in IntelliJ.
+
 ## Selenium WebDriver
 
-### 1. Create a New Java Class
+### 1. Create a New Test Class
+
+When you created the Maven project with `archetype-quickstart`, it gave you a default class called `App.java`.
+
+Instead of editing that file, it’s better to create a new Java class for each test you want to write.
+
+1. In IntelliJ, right-click the `src/main/java/com.saucedemo` package.
+2. Select New → Java Class.
+3. Name the class:
+   ```java
+   FirstSeleniumTest
+   ```
+This will give you an empty Java file where we’ll write our test.
+
+### 2: Import Selenium Libraries
+
+Since we added Selenium dependencies in pom.xml, Maven downloaded them automatically for us.
+
+Now, we just need to import the classes we’ll use in our test:
+```java
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+```
+
+### 3. Opening and Closing a Webpage
+
+Selenium WebDriver lets you open and close browser windows.
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://www.saucedemo.com/");
+driver.quit();
+```
+- `get()` → opens the given URL in Chrome.
+- At this point, you should see the Sauce Demo login page open in your browser.
+- `quit()` → closes the browser and ends the WebDriver session.
+
+
+### 4. Configuring Browser Options
+
+By default, when you run Selenium tests, Chrome opens in a normal visible browser window. But sometimes you’ll want to customize how Chrome runs, such as:
+- Running in headless mode (no visible browser window, useful for servers or CI/CD).
+- Setting the window size.
+- Disabling unnecessary extensions or notifications.
+
+Selenium lets us do this with the `ChromeOptions` class.
+
+You can pass options to Chrome, for example running in headless mode:
+```java
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class FirstSeleniumTest {
+    public static void main(String[] args) {
+        // Create ChromeOptions object to configure browser behavior
+        ChromeOptions options = new ChromeOptions();
+
+        // Run without opening a browser window
+        options.addArguments("--headless");  
+
+        // Set a fixed window size (important for headless mode)
+        options.addArguments("window-size=1200x600");
+
+        // Pass options into ChromeDriver
+        WebDriver driver = new ChromeDriver(options);
+
+        // Open the website
+        driver.get("https://www.saucedemo.com/");
+
+        // Print page title
+        System.out.println("Title: " + driver.getTitle());
+
+        // Close browser
+        driver.quit();
+    }
+}
+```
+- `ChromeOptions options = new ChromeOptions();`
+
+   Creates an object to hold special settings for Chrome.
+
+- `options.addArguments("--headless");`
+
+   Tells Chrome to run in headless mode (no window is displayed). This is useful for automation environments like Jenkins, Docker, or cloud servers    that don’t have a desktop.
+
+- `options.addArguments("window-size=1200x600");`
+
+   Sets the screen size for the headless browser. Without this, some websites may load in mobile layout, which could break tests.
+
+- `new ChromeDriver(options);`
+
+   Instead of starting Chrome with default settings, we give it the customized `options`.
+
+#### Other Common Options
+
+You can configure Chrome with many other arguments. Some useful ones:
+
+- `--incognito` → Launch in incognito mode.
+- `--disable-extensions` → Disable Chrome extensions.
+- `--start-maximized` → Start with the browser maximized.
+- `--disable-notifications` → Prevent popups/notifications.
+
+Example:
+```java
+options.addArguments("--incognito");
+options.addArguments("--start-maximized");
+```
+#### Best Practice:
+Even if you don’t always use headless mode, it’s important to understand how to configure ChromeOptions. Most real-world projects will use it to stabilize tests and make them work in different environments.
+
+### 5. Locating Elements
+
+Selenium provides multiple strategies for finding elements:
+```java
+WebElement byId = driver.findElement(By.id("user-name"));
+WebElement byName = driver.findElement(By.name("password"));
+WebElement byCss = driver.findElement(By.cssSelector(".btn_action"));
+WebElement byXpath = driver.findElement(By.xpath("//input[@id='user-name']"));
+```
+### 6. Interacting with Elements
+
+Examples of interactions:
+```java
+// Enter text
+driver.findElement(By.id("user-name")).sendKeys("standard_user");
+
+// Click a button
+driver.findElement(By.className("btn_action")).click();
+```
+### 7. Using Waits (Synchronization)
+
+Sometimes elements take time to load. Selenium provides two main types of waits:
+1. Implicit Wait: Tells WebDriver to wait for a certain amount of time when searching for elements.
+   ```java
+   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+   ```
+   - This means Selenium will try for up to 10 seconds to find an element before throwing an error.
+2. Explicit Wait: Waits for a specific condition to be true (e.g., element visible, clickable).
+   ```java
+   import org.openqa.selenium.support.ui.WebDriverWait;
+   import org.openqa.selenium.support.ui.ExpectedConditions;
+   import java.time.Duration;
+   
+   // Wait up to 20 seconds for the element to be visible
+   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+   WebElement username = wait.until(
+           ExpectedConditions.visibilityOfElementLocated(By.id("user-name"))
+   );
+   username.sendKeys("standard_user");
+   ```
+3. Best Practice:
+- Use explicit waits for elements that are dynamic.
+- Keep implicit waits short (or off) to avoid hidden timing issues.
+
+### 8. Taking Screenshots
+```java
+File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+Files.copy(screenshot.toPath(), Path.of("screenshot.png"));
+```
+### 9. Validating with Assertions
+
+You can use JUnit (already included in your Maven Quickstart project) for assertions:
+```java
+import org.junit.Assert;
+
+Assert.assertEquals("Swag Labs", driver.getTitle());
+Assert.assertTrue(driver.findElement(By.id("user-name")).isDisplayed());
+```
+
+## Appendix: Manual Setup (Reference Only)
+
+⚠️ This section is only for **historical reference** or for environments where you cannot use Maven and Selenium Manager (for example, restricted projects or offline machines).  
+
+In our course setup, you **do not need to do this**. Just skip to the next section if you’re using Maven. In older projects, every browser driver (ChromeDriver, GeckoDriver, etc.) had to be downloaded manually and referenced with System.setProperty.
+
+Now, Selenium Manager automates this, which is why we didn’t need it in our main flow.
+
+Example:
+```java
+public class Basics {
+    public static void main(String[] args) {
+        // Manually tell Selenium where ChromeDriver is
+        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.saucedemo.com/");
+        driver.quit();
+    }
+}
+```
+
+### 1. Create a New Java Class → Skip, Maven archetype already set it up. 
 1. **Open your IDE (Integrated Development Environment)**: This could be IntelliJ IDEA, Eclipse, or any other Java IDE you prefer.
 2. **Create a New Project**:
    - Go to `File > New > Project`.
@@ -9,7 +217,7 @@
    - Name your project (e.g., `SeleniumFirstScript`) and choose the project location.
    - Click `Finish`.
 
-3. **Create a New Java Class**:
+3. **Create a New Java Class**: → Optional.
    - In the Project Explorer, right-click the `src` folder.
    - Select `New > Java Class`.
    - Name your class (e.g., `Basics`) and click `Finish`.
@@ -88,34 +296,7 @@ public class Basics {
 
 **Explanation**: Once you execute the script, the Chrome browser should be invoked, open up the specified URL, in this case, https://www.saucedemo.com, and then close it.
 
-### 5. Handling Browser Options and Capabilities
-1. **Configure ChromeDriver with Specific Options**:
-   - You can set various options such as running in headless mode, disabling extensions, and setting the window size.
-
-```java
-public class Basics {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        
-        // Configure ChromeOptions
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-extensions");
-        options.addArguments("window-size=1200x600");
-        
-        // Create an instance of ChromeDriver with options
-        WebDriver driver = new ChromeDriver(options);
-        
-        // Open the specified URL
-        driver.get("https://www.saucedemo.com/");
-        
-        // Close the browser
-        driver.quit();
-    }
-}
-```
-
-### 6. Managing WebDriver Instances
+### 5. Managing WebDriver Instances
 **Best Practices for Managing WebDriver Instances**:
    - Always quit the driver instance at the end of the test to free up resources.
 
@@ -136,117 +317,7 @@ public class Basics {
 }
 ```
 
-### 7. Implicit and Explicit Waits
-**Implementing Implicit and Explicit Waits**:
-   - Waits help synchronize your script with the state of web elements.
-
-```java
-public class Basics {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        
-        // Implicit Wait
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        
-        // Open the specified URL
-        driver.get("https://www.saucedemo.com/");
-        
-        // Explicit Wait
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user-name")));
-        
-        // Close the browser
-        driver.quit();
-    }
-}
-```
-
-### 8. Locating Elements
-**Different Strategies for Locating Elements**:
-   - Use various strategies such as ID, name, class name, CSS selector, and XPath.
-
-```java
-public class Basics {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        
-        driver.get("https://www.saucedemo.com/");
-        
-        // Locating elements
-        WebElement byId = driver.findElement(By.id("user-name"));
-        WebElement byName = driver.findElement(By.name("password"));
-        WebElement byClassName = driver.findElement(By.className("btn_action"));
-        WebElement byCssSelector = driver.findElement(By.cssSelector(".btn_action"));
-        WebElement byXPath = driver.findElement(By.xpath("//input[@id='user-name']"));
-        
-        // Close the browser
-        driver.quit();
-    }
-}
-```
-
-### 9. Interacting with Web Elements
-**Common Interactions with Web Elements**:
-   - Clicking buttons, entering text, selecting from dropdowns, and handling alerts.
-
-```java
-public class Basics {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        
-        driver.get("https://www.saucedemo.com/");
-        
-        // Clicking a button
-        WebElement button = driver.findElement(By.className("btn_action"));
-        button.click();
-        
-        // Entering text
-        WebElement inputField = driver.findElement(By.id("user-name"));
-        inputField.sendKeys("standard_user");
-        
-        // Selecting from a dropdown (if applicable)
-        Select dropdown = new Select(driver.findElement(By.id("dropdownId")));
-        dropdown.selectByVisibleText("Option");
-        
-        // Handling alerts (if applicable)
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        
-        // Close the browser
-        driver.quit();
-    }
-}
-```
-
-### 10. Taking Screenshots
-**Capture Screenshots During Test Execution**:
-
-```java
-public class Basics {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        
-        driver.get("https://www.saucedemo.com/");
-        
-        // Capture screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(screenshot, new File("path/to/screenshot.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        // Close the browser
-        driver.quit();
-    }
-}
-```
-
-### 11. Handling Browser Windows and Frames
+### 6. Handling Browser Windows and Frames
 **Switch Between Multiple Browser Windows or Tabs and Frames**:
 
 ```java
@@ -271,7 +342,7 @@ public class Basics {
 }
 ```
 
-### 12. Assertions and Validations
+### 7. Assertions and Validations
 **Use Assertions to Validate Test Results**:
 
 ```java
@@ -295,7 +366,6 @@ public class Basics {
     }
 }
 ```
-
 ---
 
 <div style="width: 100%">
