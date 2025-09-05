@@ -28,9 +28,6 @@ In this section, you will find a detailed guide to writing your first Selenium s
 ### Advanced Selenium Features
 This section covers advanced features of Selenium, such as handling browser interactions, using waits, taking screenshots, and working with multiple windows and frames.
 
-### Integrating Selenium with CI/CD
-In this section, you will learn how to integrate Selenium with CI/CD pipelines to automate the testing process and ensure continuous integration and deployment.
-
 ---
 
 <div style="width: 100%">
