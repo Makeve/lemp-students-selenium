@@ -370,5 +370,5 @@ public class Basics {
 
 <div style="width: 100%">
 <a href='writing-your-first-test.md'><-- Previous Section: Writing Your First Test</a>
-<div align="right"><a href='webdriver-basic-methods.md'> Next Section: Webdriver Basic Methods --></a></div>
+<div align="right"><a href='different-browsers.md'> Next Section: Webdriver Different Browsers --></a></div>
 </div>
