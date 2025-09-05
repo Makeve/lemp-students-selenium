@@ -13,7 +13,7 @@ Setting up Selenium involves installing the necessary tools and configuring your
    - Click on the `Download` button for the latest JDK version.
    - Choose your operating system (Windows, macOS, or Linux) and follow the prompts to download the installer.
 
-2. **Install JDK**:
+1. **Install JDK**:
    - **Windows**: Run the downloaded `.exe` file and follow the setup wizard.
    - **macOS**: Open the downloaded `.dmg` file and follow the installation instructions.
    - **Linux**: Follow the instructions on the download page to install the JDK.
@@ -44,7 +44,10 @@ Setting up Selenium involves installing the necessary tools and configuring your
         source ~/.bashrc
         ```
 
-### 3. Install Selenium WebDriver
+### 3. Install Selenium WebDriver (Reference / Optional)
+
+> **Note:** If you are using Maven with Selenium 4.6 or newer, you **do not need to manually download WebDriver**. Selenium Manager handles it automatically.  
+> The following steps are for **reference or restricted network environments**.
 
 1. **Download WebDriver**: Download the WebDriver for your browser.
    - **ChromeDriver**: Go to the [ChromeDriver download page](https://sites.google.com/a/chromium.org/chromedriver/downloads) and download the latest version.
@@ -54,12 +57,12 @@ Setting up Selenium involves installing the necessary tools and configuring your
    - Extract the WebDriver executable from the downloaded archive.
    - Place the executable in a directory included in your system's `PATH`.
   
-### 4. ⚠️ Important: Verify ChromeDriver Matches Your Chrome Browser
+### 4. ⚠️ Important: Verify ChromeDriver Matches Your Chrome Browser (Reference / Optional)
 
 ChromeDriver must **match the major version** of the installed Chrome browser (e.g., Chrome **128.x** ↔︎ ChromeDriver **128.x**).  
 If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now to make sure it still matches your current Chrome version.
 
-#### 1. Check Your Chrome Version
+#### 4a. Check Your Chrome Version
 
 - **Windows (GUI method)**
   1. Open Chrome.
@@ -79,7 +82,7 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
   ``` bash
   /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
 
-#### 2. Check Your ChromeDriver Version
+#### 4b. Check Your ChromeDriver Version
 - **Windows**
    - If `chromedriver` is on your `PATH`:
   ```powersheel
@@ -110,15 +113,15 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
 > **System Settings → Privacy & Security** and click **Allow Anyway**,  
 > then run the command again.
 
-#### 3. Compare the Versions
+#### 4c. Compare the Versions
    - Example:
       - Chrome: `128.0.6613.84` → major 128
       - ChromeDriver: `128.0.6613.86` → major 128 → ✅ Works
    - If the first number doesn’t match → ❌ mismatch.
 
-#### 4. Fixing a Mismatch
+#### 4d. Fixing a Mismatch
 
-- Option 1: Update ChromeDriver (recommended)
+- Option 1: Update ChromeDriver
    1. Note your Chrome major version.
    2. Download the matching ChromeDriver from the official site.
    3. Replace the old `chromedriver` with the new one.
@@ -127,7 +130,19 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
    1. Go to About Google Chrome and update.
    2. Then download the matching ChromeDriver.
 
-- Option 3: Use Selenium Manager (Selenium ≥ 4.6)
+- Option 3: or use Selenium Manager (recommended)
+
+#### 4e. Common Pitfalls (Reference / Optional)
+- Multiple `chromedriver` executables on your system
+   - Windows: `where chromedriver`
+   - macOS: `which -a chromedriver`
+      → Remove or rename old versions.
+- On macOS, you may need to remove the “quarantine” flag:
+  ```bash
+  xattr -d com.apple.quarantine /path/to/chromedriver
+- On Apple Silicon (M1/M2 Macs), ensure you download the correct ARM64 ChromeDriver build.
+
+### 5: Use Selenium Manager (Selenium ≥ 4.6) (Recommended)
    - Selenium Manager automatically downloads the right driver.
    - You don’t need to set `webdriver.chrome.driver` manually.
  ```java
@@ -145,17 +160,88 @@ public class SeleniumTest {
     }
 }
 ```
-#### 5. Common Pitfalls
-- Multiple `chromedriver` executables on your system
-   - Windows: `where chromedriver`
-   - macOS: `which -a chromedriver`
-      → Remove or rename old versions.
-- On macOS, you may need to remove the “quarantine” flag:
-  ```bash
-  xattr -d com.apple.quarantine /path/to/chromedriver
-- On Apple Silicon (M1/M2 Macs), ensure you download the correct ARM64 ChromeDriver build.
+   - No System.setProperty needed.
+   - Maven + Selenium 4.6+ automatically downloads the correct driver.
   
-### 5. Create a Java Project and Add Selenium Jars
+### 6. Add Selenium to Your Maven Project (Recommended)
+
+Since we are using a **Maven project** (archetype quickstart), we don’t need to manually download Selenium JARs or browser drivers.  
+Maven will handle downloading Selenium libraries, and **Selenium Manager** (included in Selenium 4.6+) will automatically download the correct ChromeDriver when you run your tests.
+
+   #### 6a. Update Java Version in Maven
+
+Selenium 4 requires **Java 11 or higher**.  
+Update your `pom.xml` properties section:
+
+```xml
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>17</maven.compiler.source>
+  <maven.compiler.target>17</maven.compiler.target>
+</properties>
+```
+   #### 6b. Add Selenium Dependency
+Add the following inside the `<dependencies>` section of your `pom.xml`:
+```xml
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Selenium with Selenium Manager included -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.12.1</version> <!-- or latest stable -->
+    </dependency>
+</dependencies>
+```
+> **Note:** You can check the version of Selenium you are using by opening External Libraries in IntelliJ after Maven downloads the dependencies.
+
+   #### 6c. Create a Simple Test Using Selenium Manager
+
+Create a new Java class, e.g., `SeleniumTest.java`, in `src/main/java`.
+Example test:
+```java
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumTest {
+    public static void main(String[] args) {
+        // Selenium Manager automatically resolves the correct driver
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.example.com");
+        System.out.println("Title: " + driver.getTitle());
+        driver.quit();
+    }
+}
+```
+   - ✅ No `System.setProperty("webdriver.chrome.driver", ...)` needed.
+   - On the first run, Selenium Manager downloads the matching ChromeDriver automatically.
+
+   #### 6d. Run Your Test
+
+1. In IntelliJ, right-click `SeleniumTest.java` → Run `'SeleniumTest.main()'`.
+2. Check that Chrome opens, navigates to the site, prints the title, and closes.
+
+> If everything works, your Maven project is fully configured with Selenium and Selenium Manager, and you no longer need to download ChromeDriver manually.
+
+## Optional: Using Selenium JARs Manually
+
+> **Note for Maven users:** If you are using a Maven project (like our archetype-quickstart) with Selenium 4.6 or newer, you **do not need to download the Selenium JARs manually**.  
+> Maven will automatically download the correct Selenium libraries when you add the dependency in `pom.xml`, and Selenium Manager will handle the browser driver for you.  
+
+The manual JAR approach is only necessary if:
+
+- You are **not using Maven** (or Gradle), or  
+- You are working in a **restricted environment** where Maven cannot download dependencies from the internet.
+
+For most students, the **Maven dependency approach is simpler and recommended**, but the steps below are kept for reference if needed.
+
+### Create a Java Project and Add Selenium Jars - 
 
 #### 1. Create an Empty Java Project in Your IDE (IntelliJ or Eclipse)
 
@@ -206,7 +292,7 @@ public class SeleniumTest {
    - Select the unzipped selenium-java folder and add all the `.jar` files.
    - Also add the `.jar` files from the `lib` folder within the selenium-java directory.
 
-### 5. Verify Installation
+#### 4. Verify Installation
 
 1. **Write a Simple Test**: Create a new Java class and write a simple test to verify the setup.
    ```java
