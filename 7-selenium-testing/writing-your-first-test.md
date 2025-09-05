@@ -1,0 +1,123 @@
+# Writing Your First Test
+
+## Introduction
+
+Writing your first Selenium test involves creating a test script that interacts with a web application and verifies its behavior. This guide will walk you through writing a simple Selenium test using Java.
+
+## Step-by-Step Guide
+
+### 1. Create a New Test Class
+
+1. **Create a New Java Class**:
+   - Open your IDE (e.g., IntelliJ IDEA, Eclipse).
+   - Create a new Java class named `FirstSeleniumTest`.
+
+### 2. Import Selenium Libraries
+
+1. **Add Import Statements**:
+   - Add the necessary import statements to your class.
+   ```java
+   import org.openqa.selenium.By;
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.WebElement;
+   import org.openqa.selenium.chrome.ChromeDriver;
+   ```
+
+### 3. Set Up WebDriver
+
+1. **Set WebDriver Path**:
+   - Set the path to the WebDriver executable.
+   ```java
+   public class FirstSeleniumTest {
+       public static void main(String[] args) {
+           // Set the path to the WebDriver executable
+           System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+       }
+   }
+   ```
+
+### 4. Write the Test Script
+
+1. **Create WebDriver Instance**:
+   - Create a new instance of the Chrome driver.
+   ```java
+   WebDriver driver = new ChromeDriver();
+   ```
+
+2. **Navigate to a Website**:
+   - Use the WebDriver to navigate to a website.
+   ```java
+   driver.get("https://www.example.com");
+   ```
+
+3. **Interact with Web Elements**:
+   - Find and interact with web elements on the page.
+   ```java
+   WebElement searchBox = driver.findElement(By.name("q"));
+   searchBox.sendKeys("Selenium");
+   searchBox.submit();
+   ```
+
+4. **Verify Page Title**:
+   - Verify that the page title contains the expected text.
+   ```java
+   String title = driver.getTitle();
+   if (title.contains("Selenium")) {
+       System.out.println("Test Passed");
+   } else {
+       System.out.println("Test Failed");
+   }
+   ```
+
+5. **Close the Browser**:
+   - Close the browser after the test is complete.
+   ```java
+   driver.quit();
+   ```
+
+### 5. Complete Test Script
+
+1. **Full Test Script**:
+   - Combine all the steps into a complete test script.
+   ```java
+   public class FirstSeleniumTest {
+       public static void main(String[] args) {
+           // Set the path to the WebDriver executable
+           System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+
+           // Create a new instance of the Chrome driver
+           WebDriver driver = new ChromeDriver();
+
+           // Navigate to a website
+           driver.get("https://www.example.com");
+
+           // Find the search box and perform a search
+           WebElement searchBox = driver.findElement(By.name("q"));
+           searchBox.sendKeys("Selenium");
+           searchBox.submit();
+
+           // Verify the page title
+           String title = driver.getTitle();
+           if (title.contains("Selenium")) {
+               System.out.println("Test Passed");
+           } else {
+               System.out.println("Test Failed");
+           }
+
+           // Close the browser
+           driver.quit();
+       }
+   }
+   ```
+
+### 6. Run the Test
+
+1. **Execute the Test**:
+   - Run the `FirstSeleniumTest` class to execute the test and verify that it works as expected.
+
+---
+
+<div style="width: 100%">
+<a href='introduction-to-selenium.md'><-- Previous Section: Introduction to Selenium</a>
+<div align="right"><a href='first-selenium-script.md'> Next Section: First Selenium Script --></a></div>
+</div>
