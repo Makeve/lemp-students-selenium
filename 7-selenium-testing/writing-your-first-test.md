@@ -2,7 +2,10 @@
 
 ## Introduction
 
-Writing your first Selenium test involves creating a test script that interacts with a web application and verifies its behavior. This guide will walk you through writing a simple Selenium test using Java.
+In this guide, we will write your **first Selenium test** in Java.  
+The test will open a website, interact with a web element, and verify the page title.  
+
+> **Note:** If you are using Maven with Selenium 4.6 or newer, **Selenium Manager** automatically handles the browser driver, so you do **not** need to set `webdriver.chrome.driver` manually.
 
 ## Step-by-Step Guide
 
@@ -23,18 +26,14 @@ Writing your first Selenium test involves creating a test script that interacts 
    import org.openqa.selenium.chrome.ChromeDriver;
    ```
 
-### 3. Set Up WebDriver
-
+### 3. Create a WebDriver Instance
+Create a new instance of the Chrome driver:
 1. **Set WebDriver Path**:
-   - Set the path to the WebDriver executable.
-   ```java
-   public class FirstSeleniumTest {
-       public static void main(String[] args) {
-           // Set the path to the WebDriver executable
-           System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-       }
-   }
+```java
+  WebDriver driver = new ChromeDriver(); // Selenium Manager handles the driver
    ```
+- No need for System.setProperty if using Selenium 4.6+ with Maven.
+- This line will launch a new Chrome browser window.
 
 ### 4. Write the Test Script
 
