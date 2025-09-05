@@ -149,7 +149,7 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
 Since we are using a **Maven project** (archetype quickstart), we don’t need to manually download Selenium JARs or browser drivers.  
 Maven will handle downloading Selenium libraries, and **Selenium Manager** (included in Selenium 4.6+) will automatically download the correct ChromeDriver when you run your tests.
 
-   #### 6a. Update Java Version in Maven
+   #### 5a. Update Java Version in Maven
 
 Selenium 4 requires **Java 11 or higher**.  
 Update your `pom.xml` properties section:
