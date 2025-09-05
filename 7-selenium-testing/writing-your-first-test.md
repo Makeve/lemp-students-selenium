@@ -110,9 +110,8 @@ Create a new instance of the Chrome driver:
 
 ### 6. Run the Test
 
-1. **Execute the Test**:
-   - Run the `FirstSeleniumTest` class to execute the test and verify that it works as expected.
-      - In IntelliJ or Eclipse, right-click the class → Run `'FirstSeleniumTest'`.
+1. **Execute the Test**: Run the `FirstSeleniumTest` class to execute the test and verify that it works as expected.
+   - In IntelliJ or Eclipse, right-click the class → Run `'FirstSeleniumTest'`.
 
 Observe Chrome launching, performing the search, printing the test result, and closing.
 > ✅ If it runs successfully, your Selenium setup and Maven project are correctly configured.
