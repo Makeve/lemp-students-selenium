@@ -53,8 +53,109 @@ Setting up Selenium involves installing the necessary tools and configuring your
 2. **Install WebDriver**:
    - Extract the WebDriver executable from the downloaded archive.
    - Place the executable in a directory included in your system's `PATH`.
+  
+### 4. ⚠️ Important: Verify ChromeDriver Matches Your Chrome Browser
 
-### 4. Create a Java Project and Add Selenium Jars
+ChromeDriver must **match the major version** of the installed Chrome browser (e.g., Chrome **128.x** ↔︎ ChromeDriver **128.x**).  
+If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now to make sure it still matches your current Chrome version.
+
+#### 1. Check Your Chrome Version
+
+- **Windows (GUI method)**
+  1. Open Chrome.
+  2. Click the **⋮** menu → **Help** → **About Google Chrome**.
+  3. Note the version number (e.g., `128.0.6613.84`). The **first number** (`128`) is the major version.
+
+- **Windows (PowerShell method)**
+  ```powershell
+  (Get-Item "C:\Program Files\Google\Chrome\Application\chrome.exe").VersionInfo.ProductVersion
+
+- **macOS (GUI method)**
+ 1. Open Chrome.
+ 2. Click Chrome (menu bar) → About Google Chrome.
+ 3. Note the version number (major = first number).
+
+- **macOS (Terminal method)**
+  ``` bash
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+
+#### 2. Check Your ChromeDriver Version
+- **Windows**
+   - If `chromedriver` is on your `PATH`:
+  ```powersheel
+  chromedriver --version
+  ```
+   - If it’s in a folder (e.g., Downloads):
+  ```powershell
+  .\chromedriver.exe --version
+   ```
+   - Or right-click → Properties → Details → File version.
+ 
+- **macOS**
+  - If `chromedriver` is on your `PATH`:
+  ```bash
+  chromedriver --version
+  ```
+  - If it’s in a folder (e.g., Downloads):
+    ```bash
+    cd /path/to/folder
+    ./chromedriver --version
+> **Note (macOS users):**  
+> If you see a **permission warning**, make the file executable:  
+> ```bash
+> chmod +x chromedriver
+> ```  
+>  
+> If macOS blocks it with **“cannot be opened”**, go to:  
+> **System Settings → Privacy & Security** and click **Allow Anyway**,  
+> then run the command again.
+
+#### 3. Compare the Versions
+   - Example:
+      - Chrome: `128.0.6613.84` → major 128
+      - ChromeDriver: `128.0.6613.86` → major 128 → ✅ Works
+   - If the first number doesn’t match → ❌ mismatch.
+
+#### 4. Fixing a Mismatch
+
+- Option 1: Update ChromeDriver (recommended)
+   1. Note your Chrome major version.
+   2. Download the matching ChromeDriver from the official site.
+   3. Replace the old `chromedriver` with the new one.
+
+- Option 2: Update Chrome
+   1. Go to About Google Chrome and update.
+   2. Then download the matching ChromeDriver.
+
+- Option 3: Use Selenium Manager (Selenium ≥ 4.6)
+   - Selenium Manager automatically downloads the right driver.
+   - You don’t need to set `webdriver.chrome.driver` manually.
+ ```java
+  // Example with Selenium 4.6+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumTest {
+    public static void main(String[] args) {
+        // No need to set driver path
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.example.com");
+        System.out.println("Title: " + driver.getTitle());
+        driver.quit();
+    }
+}
+```
+#### 5. Common Pitfalls
+- Multiple `chromedriver` executables on your system
+   - Windows: `where chromedriver`
+   - macOS: `which -a chromedriver`
+      → Remove or rename old versions.
+- On macOS, you may need to remove the “quarantine” flag:
+  ```bash
+  xattr -d com.apple.quarantine /path/to/chromedriver
+- On Apple Silicon (M1/M2 Macs), ensure you download the correct ARM64 ChromeDriver build.
+  
+### 5. Create a Java Project and Add Selenium Jars
 
 #### 1. Create an Empty Java Project in Your IDE (IntelliJ or Eclipse)
 
