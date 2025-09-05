@@ -91,6 +91,6 @@ By following the steps outlined above, you can configure Selenium WebDriver to e
 ---
 
 <div style="width: 100%">
-<a href='webdriver-basic-methods.md'><-- Previous Section: Webdriver Basic Methods</a>
+<a href='first-selenium-script.md'><-- Previous Section: First Selenium Scripts</a>
 <div align="right"><a href='../8-locators/index.md'> Proceed to Week 8 Session: Locators --></a></div>
 </div>
