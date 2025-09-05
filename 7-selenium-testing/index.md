@@ -11,7 +11,6 @@ This module will guide you through the essential steps required to set up and ex
 - [Setting Up Selenium](setting-up-selenium.md)
 - [Writing Your First Test](writing-your-first-test.md)
 - [First Selenium Script](first-selenium-script.md)
-- [Webdriver Basic Method](webdriver-basic-methods.md)
 - [Webdriver Different Browsers](different-browsers.md)
 
 ### Introduction to Selenium
