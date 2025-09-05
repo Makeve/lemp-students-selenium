@@ -130,7 +130,9 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
    1. Go to About Google Chrome and update.
    2. Then download the matching ChromeDriver.
 
-- Option 3: or use Selenium Manager (recommended)
+- Option 3: or use Selenium Manager (Recommended)
+   - Selenium Manager automatically downloads the right driver.
+   - You don’t need to set `webdriver.chrome.driver` manually.
 
 #### 4e. Common Pitfalls (Reference / Optional)
 - Multiple `chromedriver` executables on your system
@@ -140,30 +142,9 @@ If you downloaded ChromeDriver weeks ago (for example, in Lecture 1), check now 
 - On macOS, you may need to remove the “quarantine” flag:
   ```bash
   xattr -d com.apple.quarantine /path/to/chromedriver
-- On Apple Silicon (M1/M2 Macs), ensure you download the correct ARM64 ChromeDriver build.
-
-### 5: Use Selenium Manager (Selenium ≥ 4.6) (Recommended)
-   - Selenium Manager automatically downloads the right driver.
-   - You don’t need to set `webdriver.chrome.driver` manually.
- ```java
-  // Example with Selenium 4.6+
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-public class SeleniumTest {
-    public static void main(String[] args) {
-        // No need to set driver path
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.example.com");
-        System.out.println("Title: " + driver.getTitle());
-        driver.quit();
-    }
-}
-```
-   - No System.setProperty needed.
-   - Maven + Selenium 4.6+ automatically downloads the correct driver.
+- On Apple Silicon (M1/M2 Macs), ensure you download the correct ARM64 ChromeDriver build.  
   
-### 6. Add Selenium to Your Maven Project (Recommended)
+### 5. Add Selenium to Your Maven Project (Recommended)
 
 Since we are using a **Maven project** (archetype quickstart), we don’t need to manually download Selenium JARs or browser drivers.  
 Maven will handle downloading Selenium libraries, and **Selenium Manager** (included in Selenium 4.6+) will automatically download the correct ChromeDriver when you run your tests.
@@ -180,7 +161,7 @@ Update your `pom.xml` properties section:
   <maven.compiler.target>17</maven.compiler.target>
 </properties>
 ```
-   #### 6b. Add Selenium Dependency
+   #### 5b. Add Selenium Dependency
 Add the following inside the `<dependencies>` section of your `pom.xml`:
 ```xml
 <dependencies>
@@ -201,10 +182,10 @@ Add the following inside the `<dependencies>` section of your `pom.xml`:
 ```
 > **Note:** You can check the version of Selenium you are using by opening External Libraries in IntelliJ after Maven downloads the dependencies.
 
-   #### 6c. Create a Simple Test Using Selenium Manager
+   #### 5c. Create a Simple Test Using Selenium Manager
 
 Create a new Java class, e.g., `SeleniumTest.java`, in `src/main/java`.
-Example test:
+- Example test:
 ```java
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -222,7 +203,7 @@ public class SeleniumTest {
    - ✅ No `System.setProperty("webdriver.chrome.driver", ...)` needed.
    - On the first run, Selenium Manager downloads the matching ChromeDriver automatically.
 
-   #### 6d. Run Your Test
+   #### 5d. Run Your Test
 
 1. In IntelliJ, right-click `SeleniumTest.java` → Run `'SeleniumTest.main()'`.
 2. Check that Chrome opens, navigates to the site, prints the title, and closes.
