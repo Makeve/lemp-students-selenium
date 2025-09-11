@@ -92,9 +92,8 @@ public class SauceDemoLogin {
         driver.quit();
     }
 }
-</details>
 ```
----
+</details>
 
 <div style="width: 100%">
 <a href='introduction.md'><-- Previous Section: Introduction</a>
