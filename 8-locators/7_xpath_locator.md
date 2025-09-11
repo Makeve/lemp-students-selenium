@@ -24,7 +24,7 @@ Using XPath:
     ```xpath
     //button[@id='login-button']
     ```
-   - By text:
+  - By text:
     ```xpath
     //button[text()='Login']
     ```
@@ -71,7 +71,7 @@ loginButtonText.click();
     ```xpath
     //input[starts-with(@id,'user')]
     ```
-  -Parent → Child:
+  - Parent → Child:
     ```xpath
     //div[@class='login-box']//input[@id='password']
     ```
