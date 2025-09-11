@@ -130,8 +130,6 @@ public class SauceDemoByCssSelector {
 ```
 </details>
 
----
-
 <div style="width: 100%">
 <a href='3_classname_locator.md'><-- Previous Section: Class Name Locator</a>
 <div align="right"><a href='5_linktext_locator.md'> Next Section: Link Text & Partial Link Text Locator --></a></div>
