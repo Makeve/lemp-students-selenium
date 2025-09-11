@@ -3,7 +3,9 @@
 
 ## Mastering Selenium Locators & Interacting with Web Elements
 
-This module will guide you through the various types of locators that can be used to identify web elements in Selenium. It includes detailed instructions on using different locators such as ID, Name, Class Name, CSS Selector, Link Text, Partial Link Text, Tag Name, and XPath.
+Locators are the **backbone of Selenium automation**. To interact with anything on a web page — like buttons, text fields, checkboxes, or dropdowns — Selenium first needs to **find** that element. Locators are the way we point Selenium to the right element in the browser.  
+
+In this session, you’ll learn how to use all the different types of locators and practice writing Selenium scripts that interact with real web pages. 
 
 ### Contents
 - [Introduction](introduction.md)
@@ -17,18 +19,29 @@ This module will guide you through the various types of locators that can be use
 - [Exercise](exercise.md)
 - [Hands-on Exercise](hands-on-exercise.md)
 
-### Introduction
-This module will cover steps on how to identify web page objects using various different locators. Locators are used to uniquely identify HTML elements on a web page. Once the elements are identified, you can interact with them using Selenium commands.
+### 📝 What You’ll Learn  
 
-### Objectives of This Session:
-1. Understand different types of locators
-2. Learn how to inspect elements using chrome DevTools
-3. Write test scripts to interact with text fields, buttons, checkboxes, and dropdowns
-4. Debug common locator-related issues in selenium
+By the end of this session, you’ll be able to:  
 
-### Website for Practice
-The website we will be using for this module is https://www.saucedemo.com/
-The browser for this tutorial will be Google Chrome.
+✅ Understand different types of locators in Selenium  
+✅ Use Chrome DevTools to inspect and find elements on a page  
+✅ Write test scripts that interact with:  
+   - Text fields  
+   - Buttons  
+   - Checkboxes  
+   - Dropdowns  
+✅ Debug common locator problems when your script can’t find an element  
+
+### 🌍 Practice Website  
+
+We’ll use this website for all our exercises:  
+👉 [https://www.saucedemo.com/](https://www.saucedemo.com/)  
+
+And our browser of choice will be: **Google Chrome**.  
+
+### 💡 Why This Matters  
+
+If you can’t **find elements correctly**, your tests will fail. Mastering locators is the **most important skill in Selenium automation**. This session gives you a solid foundation so you can write reliable, maintainable test scripts.  
 
 ---
 
