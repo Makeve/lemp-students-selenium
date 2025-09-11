@@ -27,9 +27,9 @@ Before starting, ensure you have the following installed:
 Each module includes **theory, practical exercises, and test script examples**.
 
 ### ✅ Week 1: Prerequisites
-- Understanding Selenium WebDriver  
-- Installing WebDriver & Configuring Your Environment  
-- Writing Your First Selenium Test  
+- Understanding the Tools & Technologies required for setup 
+- Installing & Configuring Your Environment  
+- Introduction to Git  
 
 ### ✅ Week 2: Git Workflows
 - Using Git & GitHub for automation projects
@@ -45,7 +45,7 @@ Each module includes **theory, practical exercises, and test script examples**.
 
 ### ✅ Week 5: CI/CD
 - Running Selenium tests in CI/CD pipelines
-- GitHub Actions & Jenkins integration
+- GitHub Actions integration
 
 ### ✅ Week 6: Introduction to Testing
 - Basics of automation testing & Selenium
@@ -55,24 +55,26 @@ Each module includes **theory, practical exercises, and test script examples**.
 - Understanding Selenium WebDriver
 - Writing basic test scripts
 
-### ✅ Week 8: Selenium Basics Continued
-- Advanced Selenium WebDriver features
-- Handling different web elements
-
-### ✅ Week 9: Locators in Selenium
+### ✅ Week 8: Locators in Selenium
 - Finding elements using XPath, CSS Selectors, etc.
 - Best practices for using locators
 
-### ✅ Week 10: Introduction to Final Project
-- Planning your final project
-- Setting up your project structure
+### ✅ Week 9: Handling Web Elements
+- Advanced Selenium WebDriver features
+- Handling different web elements
 
-### ✅ Week 11: Final Project & Career Readiness
-- Working on your capstone project
+### ✅ Week 10: Cucumber BDD
+- Introduction to Cucumber
+- Running cucumber tests
+- Setting up Cucumber with Selenium
+
+### ✅ Week 11: Introduction to Final Project
+- Planning your final project
+- Working on your project Exercise
 - Debugging & Error Handling
 
 ### ✅ Week 12: Final Project & Career Readiness Continued
-- Completing your capstone project
+- Completing your final project Exercise
 - Code Reviews & Best Practices
 - Mock Interview Tips
 
