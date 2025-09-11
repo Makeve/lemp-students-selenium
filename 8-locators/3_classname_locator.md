@@ -98,8 +98,9 @@ public class SauceDemoByClassName {
         driver.quit();
     }
 }
-</details>
 ```
+</details>
+
 
 <div style="width: 100%">
 <a href='2_name_locator.md'><-- Previous Section: Name Locator</a>
