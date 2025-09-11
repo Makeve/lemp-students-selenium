@@ -7,8 +7,6 @@
 3. Click the **Login button**  
 4. Print the **error message** displayed  
 
----
-
 ## ✅ Sample Code (Java + Selenium)  
 
 <details>
