@@ -92,9 +92,8 @@ public class SauceDemoLoginByName {
         driver.quit();
     }
 }
-</details>
 ```
----
+</details>
 
 <div style="width: 100%">
 <a href='1_id_locator.md'><-- Previous Section: ID Locator</a>
