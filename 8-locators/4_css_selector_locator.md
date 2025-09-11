@@ -127,8 +127,8 @@ public class SauceDemoByCssSelector {
         driver.quit();
     }
 }
-</details>
 ```
+</details>
 
 ---
 
