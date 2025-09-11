@@ -3,7 +3,7 @@
 
 ## Mastering Selenium Locators & Interacting with Web Elements
 
-Locators are the **backbone of Selenium automation**. To interact with anything on a web page — like buttons, text fields, checkboxes, or dropdowns — Selenium first needs to **find** that element. Locators are the way we point Selenium to the right element in the browser.  
+Locators are the **backbone of Selenium automation**. To interact with anything on a web page, like buttons, text fields, checkboxes, or dropdowns. Selenium first needs to **find** that element. Locators are the way we point Selenium to the right element in the browser.  
 
 In this session, you’ll learn how to use all the different types of locators and practice writing Selenium scripts that interact with real web pages. 
 
