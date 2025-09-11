@@ -1,66 +1,70 @@
-# Task: Hands-on Exercise
+# 🖐️ Hands-on Exercise  
 
-## Task: Modify the Script to Perform the Following Actions
+## 📝 Task: Modify the Script to Perform the Following Actions  
 
-1. Open the Facebook Login Page
-2. Enter email and password
-3. Click the Login button
-4. Print the error message displayed
+1. Open the **Facebook Login Page**  
+2. Enter email and password  
+3. Click the **Login button**  
+4. Print the **error message** displayed  
 
-### Sample Code:
+---
+
+## ✅ Sample Code (Java + Selenium)  
+
+<details>
+<summary>💡 Click here to view the solution</summary>
 
 ```java
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqaelenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FacebookLoginTest {
     public static void main(String[] args) {
-        // Set the path to the chromedriver executable
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-
-        // Create a new instance of the ChromeDriver
+        // 1. Create a new instance of the ChromeDriver
         WebDriver driver = new ChromeDriver();
 
-        // Navigate to Facebook login page
+        // 2. Navigate to Facebook login page
         driver.get("https://www.facebook.com/login");
 
-        // Locate the email input field by its ID attribute
+        // 3. Locate the email input field by its ID attribute
         WebElement emailField = driver.findElement(By.id("email"));
 
-        // Locate the password input field by its ID attribute
+        // 4. Locate the password input field by its ID attribute
         WebElement passwordField = driver.findElement(By.id("pass"));
 
-        // Locate the login button by its name attribute
+        // 5. Locate the login button by its name attribute
         WebElement loginButton = driver.findElement(By.name("login"));
 
-        // Enter the email
+        // 6. Enter the email
         emailField.sendKeys("your-email@example.com");
 
-        // Enter the password
+        // 7. Enter the password
         passwordField.sendKeys("your-password");
 
-        // Click the login button
+        // 8. Click the login button
         loginButton.click();
 
-        // Locate the error message by its CSS selector or XPath
+        // 9. Locate the error message by its CSS selector
         WebElement errorMessage = driver.findElement(By.cssSelector("div._9ay7"));
 
-        // Print the error message displayed
+        // 10. Print the error message displayed
         System.out.println("Error Message: " + errorMessage.getText());
 
-        // Close the browser
+        // 11. Close the browser
         driver.quit();
     }
 }
 ```
+</details>
 
 ## Session Summary
-- Learned different types of locators.
+In this lecture, we:
+- Learned different types of locators (`id, name, className, cssSelector, linkText, tagName, xpath`).
 - Used Chrome DevTools to inspect elements.
-- Wrote scripts to interact with text fields, buttons, checkboxes.
-- Debugged common errors.
+- Wrote scripts to interact with **text fields, buttons, links**.
+- Practiced debugging common errors when locating elements.
 
 <div style="width: 100%">
 <a href='exercise.md'><-- Previous Section: Exercise</a>
