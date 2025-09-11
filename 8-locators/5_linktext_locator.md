@@ -115,8 +115,8 @@ public class SauceDemoByLinkText {
         driver.quit();
     }
 }
-</details>
 ```
+</details>
 
 <div style="width: 100%">
 <a href='4_css_selector_locator.md'><-- Previous Section: CSS Selector Locator</a>
