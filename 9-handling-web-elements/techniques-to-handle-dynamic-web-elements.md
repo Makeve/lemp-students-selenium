@@ -7,7 +7,7 @@ These are elements that can **change their properties, location, or state** (ena
 
 In this lesson, we’ll learn **how to locate and interact with such elements** safely.
 
-## 🔑 Step 1: Using Dynamic Locators
+## Step 1: Using Dynamic Locators
 
 Dynamic locators help you find elements that **don’t have fixed attributes** (like ID or Name).  
 We often use **XPath** or **CSS Selectors** with partial matches.
@@ -31,7 +31,7 @@ WebElement loginBtn = driver.findElement(
 loginBtn.click();
 
 ```
-## 🔑 Step 2: Handling Element State Changes
+## Step 2: Handling Element State Changes
 
 Sometimes elements exist but are not yet clickable (e.g., greyed-out buttons).
 In this case, we use Explicit Waits to wait until the element becomes active.
@@ -44,7 +44,7 @@ WebElement loginBtn = wait.until(
 loginBtn.click();
 
 ```
-## 🔑 Step 3: Dealing with Element Visibility
+## Step 3: Dealing with Element Visibility
 
 Other times, elements are hidden in the DOM and only become visible later.
 We can wait until the element is visible before interacting.
@@ -71,7 +71,9 @@ System.out.println(errorMsg.getText());
 3. Wait for the error message to appear.
 4. Print the text of the error message in the console.
 
-💻 Example Code
+<details>
+<summary>💡 Click here to view the solution</summary>
+    
 ```java
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -112,6 +114,8 @@ public class DynamicElementHandling {
     }
 }
 ```
+</details>
+
 ## ⚡ Key Takeaways
 
 - Use XPath/CSS for elements with changing attributes.
