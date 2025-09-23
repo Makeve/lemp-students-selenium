@@ -65,7 +65,9 @@ Try locating and interacting with different links on the Sauce Demo website usin
 3. Opens the side menu  
 4. Clicks the **Logout link** using:  
    - First with **Link Text**  
-   - Then with **Partial Link Text**  
+   - Then with **Partial Link Text**
+
+> 💡 **Note:** If the above doesn't work then try this exercise on a facebook page specifically test the forget password using Link and Partial Link Text.
 
 ✅ **Rule:** Use **Link Text & Partial Link Text locators only**.  
 
@@ -117,6 +119,60 @@ public class SauceDemoByLinkText {
 }
 ```
 </details>
+
+## ✅ Sample Solution without Link or Partial Link Text (Java + Selenium)  
+
+<details>
+<summary>💡 Click here to view the solution</summary>
+
+```java
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+public class SauceDemoLogout {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        // 1. Go to SauceDemo and login
+        driver.get("https://www.saucedemo.com/");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+
+        // 2. Open the side menu
+        driver.findElement(By.id("react-burger-menu-btn")).click();
+
+        // 3. Wait until the logout button is visible & clickable
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement logoutBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("logout_sidebar_link"))
+        );
+
+        // 4. Click logout
+        logoutBtn.click();
+
+        // 5. Verify: After logout, the login button should be back on screen
+        WebElement loginBtn = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("login-button"))
+        );
+        if (loginBtn.isDisplayed()) {
+            System.out.println("✅ Logout successful – back on login page.");
+        } else {
+            System.out.println("❌ Logout failed – still inside the app.");
+        }
+
+        driver.quit();
+    }
+}
+```
+</details>
+
 
 <div style="width: 100%">
 <a href='4_css_selector_locator.md'><-- Previous Section: CSS Selector Locator</a>
