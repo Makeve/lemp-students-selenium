@@ -18,12 +18,7 @@ By the end of this session, you will be able to:
 - Identify and interact with **dynamic elements** on a webpage.  
 - Use **implicit waits** for general synchronization.  
 - Apply **explicit waits** for specific conditions (e.g., waiting for a button to be clickable).  
-- Implement **fluent waits** to handle advanced cases with custom polling.  
-
-### 🚀 Next Steps
-Click below to get started with the first topic:  
-
-👉 [Techniques to Handle Dynamic Web Elements](techniques-to-handle-dynamic-web-elements.md)  
+- Implement **fluent waits** to handle advanced cases with custom polling.   
 
 
 <div style="width: 100%">
