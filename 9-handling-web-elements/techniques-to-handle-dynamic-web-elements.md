@@ -3,9 +3,11 @@
 When testing real websites, you’ll often deal with **dynamic elements**.  
 These are elements that can **change their properties, location, or state** (enabled/disabled, visible/invisible) depending on user actions or page loading.
 
-👉 Example: On **SauceDemo**, the "Login" button is only useful after you type your username and password. Other elements, like error messages, only appear *after* you try logging in with wrong details.
+👉 Example: On [SauceDemo](https://www.saucedemo.com), the **Login button** is only useful after entering a username and password. Error messages only appear *after* you try logging in with invalid details.  
 
-In this lesson, we’ll learn **how to locate and interact with such elements** safely.
+⚡ **Important:**  
+This lesson focuses on **how to find and interact with tricky elements** that don’t stay the same.  
+In the **next lesson (Waits)**, we’ll learn how to handle the *timing issues* that often go hand-in-hand with dynamic elements.
 
 ## Step 1: Using Dynamic Locators
 
