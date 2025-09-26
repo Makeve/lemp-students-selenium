@@ -1,11 +1,21 @@
 # Implementing Waits (Implicit, Explicit, and Fluent Waits)
 
-When working with real websites, elements don’t always load instantly.  
-Some may take time to appear, become visible, or become clickable.  
-That’s why Selenium provides **waits** to make your tests more reliable.  
+In the previous lesson, we learned how to handle **dynamic elements** — elements that change their attributes, visibility, or state.  
 
-In this lesson, we’ll explore **3 types of waits** and see how to use them with [SauceDemo](https://www.saucedemo.com).
+But there’s another challenge in real websites: **timing**.  
+Even if you know how to locate an element, it may not be ready immediately.  
+It might take a few seconds to appear, become clickable, or load fully.
 
+👉 Example: On [SauceDemo](https://www.saucedemo.com), after logging in, the **Products page title** or the **cart icon** doesn’t always appear instantly.  
+
+⚡ **This lesson builds on dynamic elements** and teaches you how to:  
+- Apply **implicit waits** (for all elements).  
+- Use **explicit waits** (for specific conditions).  
+- Implement **fluent waits** (for advanced polling and control).  
+
+Think of it as the missing piece:  
+- Dynamic locators = *finding the right element*.  
+- Waits = *waiting until the element is ready*.
 
 ## ⏳ 1. Implicit Waits
 
