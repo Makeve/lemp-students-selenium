@@ -150,41 +150,42 @@ Now create step definitions in `LoginSteps.java` in `src/test/java/stepDefinitio
 
 <summary>💻 Click here to view the solution (hidden)</summary>
     
-    ```java
+```java
     package stepDefinitions;
-    import io.cucumber.java.en.*;
-    import org.openqa.selenium.By;
-    import org.openqa.selenium.WebDriver;
-    import org.openqa.selenium.chrome.ChromeDriver;
-    
-    public class LoginSteps {
-        WebDriver driver;
-    
-        @Given("User is on the login page")
-        public void userIsOnLoginPage() {
-            driver = new ChromeDriver();
-            driver.get("https://example.com/login");
-        }
-    
-        @When("User enters valid username and password")
-        public void userEntersValidCredentials() {
-            driver.findElement(By.id("username")).sendKeys("testuser");
-            driver.findElement(By.id("password")).sendKeys("password123");
-        }
-    
-        @And("User clicks the login button")
-        public void userClicksLoginButton() {
-            driver.findElement(By.id("loginButton")).click();
-        }
-    
-        @Then("User should be redirected to the dashboard")
-        public void userShouldBeRedirectedToDashboard() {
-            boolean isDashboardDisplayed = driver.findElement(By.id("dashboard")).isDisplayed();
-            assert isDashboardDisplayed;
-            driver.quit();
-        }
+
+import io.cucumber.java.en.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginSteps {
+    WebDriver driver;
+
+    @Given("User is on the login page")
+    public void userIsOnLoginPage() {
+        driver = new ChromeDriver();
+        driver.get("https://www.saucedemo.com/");
     }
-    ```
+
+    @When("User enters valid username and password")
+    public void userEntersValidCredentials() {
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+    }
+
+    @And("User clicks the login button")
+    public void userClicksLoginButton() {
+        driver.findElement(By.id("login-button")).click();
+    }
+
+    @Then("User should be redirected to the products page")
+    public void userShouldBeRedirectedToProductsPage() {
+        boolean isProductsDisplayed = driver.findElement(By.className("title")).isDisplayed();
+        assert isProductsDisplayed;
+        driver.quit();
+    }
+}
+```
 </details>
 
 ### Step 6: Assignment ✍️
