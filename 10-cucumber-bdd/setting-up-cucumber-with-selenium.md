@@ -60,6 +60,7 @@ Feature: Contact Us form functionality
 Create step definition classes to map Gherkin steps to Java methods. Inside `src/test/java/stepDefinitions,` create `ContactUsSteps.java`:
 
 ```java
+package stepDefinitions;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
