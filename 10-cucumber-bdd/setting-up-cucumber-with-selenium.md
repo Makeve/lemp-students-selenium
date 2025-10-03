@@ -151,6 +151,7 @@ Now create step definitions in `LoginSteps.java` in `src/test/java/stepDefinitio
 <summary>💻 Click here to view the solution (hidden)</summary>
     
     ```java
+    package stepDefinitions;
     import io.cucumber.java.en.*;
     import org.openqa.selenium.By;
     import org.openqa.selenium.WebDriver;
