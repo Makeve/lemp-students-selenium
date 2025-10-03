@@ -8,8 +8,7 @@ Welcome to Session 10! In this module, we will cover Behaviour-Driven Developmen
 2. [Writing Test Cases in Gherkin Syntax](writing-test-cases-in-gherkin-syntax.md)
 3. [Setting Up Cucumber with Selenium](setting-up-cucumber-with-selenium.md)
 4. [Running Cucumber Tests](running-cucumber-tests.md)
-5. [Setting up Selenium Tests in a CI/CD Pipeline (GitHub Actions)](setting-up-selenium-test-in-a-ci-cd-pipeline.md)
-6. [Basic User Journey](basic-user-journey.md)
+5. [Basic User Journey](basic-user-journey.md)
 
 
 By the end of this session, students will:
