@@ -41,7 +41,10 @@ Make sure your project has the correct dependencies for JUnit 4, Cucumber, and S
 
 ```
 
-### 2. Create a Feature File (ContactUs.feature)
+### 2. Install Cucumber for Java plugin 
+    (File → Settings → Plugins → Marketplace → search “Cucumber for Java” → Install → Restart IDE).
+
+### 3. Create a Feature File (ContactUs.feature)
 
 Create a directory for feature files and add your Gherkin scenarios. For example, Inside `src/test/resources/features,` create `ContactUs.feature:`.
 
@@ -55,7 +58,7 @@ Feature: Contact Us form functionality
     Then User should see a success message
 ```
 
-### 3. Create Step Definitions (ContactUsSteps.java)
+### 4. Create Step Definitions (ContactUsSteps.java)
 
 Create step definition classes to map Gherkin steps to Java methods. Inside `src/test/java/stepDefinitions,` create `ContactUsSteps.java`:
 
@@ -97,7 +100,7 @@ public class ContactUsSteps {
 
 ```
 
-### 4. Create a Test Runner (TestRunner.java)
+### 5. Create a Test Runner (TestRunner.java)
 
 Create a test runner class to execute your Cucumber tests. Inside `src/test/java,` create `TestRunner.java`:
 
@@ -125,7 +128,7 @@ public class TestRunner { }
 3. **Test Runner (.java)** → Executes all feature files with JUnit.
 
 
-### 5. Hands-on Exercise
+### 6. Hands-on Exercise
 
 Task: Write a Cucumber test for login functionality.
 
@@ -188,7 +191,7 @@ public class LoginSteps {
 ```
 </details>
 
-### Step 6: Assignment ✍️
+### Step 7: Assignment ✍️
 
 Create a Cucumber test for a user registration scenario.
 
