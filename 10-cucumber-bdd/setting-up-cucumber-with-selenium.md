@@ -140,7 +140,7 @@ Feature: Login functionality
     Given User is on the login page
     When User enters valid username and password
     And User clicks the login button
-    Then User should be redirected to the dashboard
+    Then User should be redirected to the products page
 ```
 
 Now create step definitions in `LoginSteps.java` in `src/test/java/stepDefinitions` to handle logging into the application:
