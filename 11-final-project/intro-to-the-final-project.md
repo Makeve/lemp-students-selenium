@@ -8,7 +8,6 @@ The final project is designed to give you hands-on experience with automating te
 
 1. **Define Test Cases**: Learn to identify and define meaningful test cases for an e-commerce website.
 2. **Write Test Cases**: Implement the test cases using Cucumber and Selenium.
-3. **Integrate with CI/CD**: Set up a CI/CD pipeline to automate the testing process.
 
 ## Project Scenario
 
