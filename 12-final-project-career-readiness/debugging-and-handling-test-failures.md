@@ -79,9 +79,15 @@ public int add(int a, int b) {
 }
 ```
 
-## Summary
+## 🧾 Summary
+By the end of this session, you should be able to:
+- Understand and apply debugging techniques effectively.
+- Analyze test failures and interpret error messages.
+- Identify and fix root causes of automation issues.
+- Ensure your fixes maintain the overall stability of your test suite.
 
-By the end of this session, you should understand the process of debugging, be able to analyze and handle test failures, and apply debugging techniques to identify and fix issues in the code.
+> ⚡ **Remember:**  
+> Debugging is not just about fixing errors — it’s about understanding *why* they happened and preventing them from happening again. 🧠  
 
 ---
 
