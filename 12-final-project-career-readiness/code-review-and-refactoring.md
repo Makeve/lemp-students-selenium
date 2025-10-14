@@ -79,6 +79,10 @@ public class User {
     }
 }
 ```
+✅ Improvement:
+- Changed fields from public to private.
+- Added getters and setters for data protection.
+- Improved encapsulation for better code quality.
 
 ## Refactoring Techniques
 
@@ -91,6 +95,8 @@ Refactoring is the process of improving the structure and readability of code wi
 1. **Extract Method**: Break down large methods into smaller, more manageable methods.
 2. **Rename Variable**: Use meaningful names for variables to improve readability.
 3. **Encapsulate Field**: Use getters and setters to access class fields instead of making them public.
+4. **Simplify Conditional Logic**: Use early returns or switch statements to make logic easier to follow.
+5. **Remove Duplicates*: Reuse methods instead of repeating code.
 
 ### Real-World Analogy
 
@@ -120,10 +126,17 @@ public class Calculator {
     }
 }
 ```
+✅ Improvement:
+- Code is modular and easier to extend.
+- New methods can be added without changing existing logic.
 
-## Summary
+## 🧾 Summary
+By the end of this session, you should be able to:
+- Understand the importance of code reviews for quality and collaboration.
+- Identify code smells that need refactoring.
+- Apply refactoring techniques to clean up and improve your code.
 
-By the end of this session, you should understand the importance of code review and refactoring, be able to identify code smells, and apply refactoring techniques to improve code quality.
+Remember: Clean code = Professional code.
 
 ---
 
