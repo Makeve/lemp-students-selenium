@@ -75,5 +75,5 @@ By the end of this assignment, you should have fixed all remaining bugs in your 
 
 <div style="width: 100%">
 <a href='finalise-project.md'><-- Previous Section: Hands-on Exercise to Finalize Project & Run All Test Cases</a>
-<div align="right"><a href='../README.md'> Back to Home --></a></div>
+<div align="right"><a href='final-demo-and-career-prep.md'> Final Demo and Career Prep --></a></div>
 </div>
