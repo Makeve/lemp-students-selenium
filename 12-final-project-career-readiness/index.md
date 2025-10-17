@@ -34,13 +34,19 @@ Here’s what we’ll cover in this final session:
    - Polish your scripts and prepare a final demo presentation.  
    - Showcase your work as your **final submission** for this course.  
 
+6. [Final Demo and Career Prep](final-demo-and-career-prep.md)  
+   - Project Demo.  
+   - CV Restructuring.  
+   - Interview Preparation.
+
 ## 🎯 What You’ll Achieve This Week  
 
 By the end of this session, you’ll be able to:  
 - Conduct code reviews and apply refactoring techniques.  
 - Debug and handle test failures confidently.  
 - Follow automation best practices used in real projects.  
-- Deliver a complete, working automation project demo.  
+- Deliver a complete, working automation project demo.
+- Career readiness and Interview preparation
 
 ---
 
