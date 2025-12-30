@@ -14,7 +14,7 @@ By the end of this session, you’ll understand:
 - How to run Selenium tests automatically in CI.
 
 ### Contents
-- [Overview](introduction.md)
+- [Overview](overview.md)
 - [Section 1 - Introduction to CI/CD](introduction-to-ci-cd.md)
 - [Section 2 - Setting Up CI with GitHub Actions](setting-up-ci-with-github-actions.md)
 - [Section 3 - Running Tests in CICD](running-tests-in-CICD.md)
