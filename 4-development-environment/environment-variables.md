@@ -55,9 +55,14 @@ Environment variables are key-value pairs that can be used to configure the beha
    - Click on the `Environment Variables` button.
 
 2. **Set Environment Variable**:
-   - In the `System Properties` window, click on `New` under `User variables` or `System variables`.
-   - Enter the `Variable name` and `Variable value`.
+   - In the `System Properties` window, click on `New` under `User variables`.
+   - Enter the Variable name`JAVA_HOME` and Variable value `C:\ProgramFiles\Java\jdk17`
    - Click `OK` to save the changes.
+   - Under system Variables, set the Java path
+   - Double Click the `Path`
+   - Click the `New` button
+   - Add %JAVA_HOME%\bin
+   - Click ok
 
 ### 3. Using Environment Variables in Code
 
